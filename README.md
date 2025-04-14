@@ -17,5 +17,7 @@ Gợi ý:
   tạo các bảng với struct phù hợp
   insert nhiều rows từ excel vào cửa sổ edit dữ liệu 1 table (quan sát thì sẽ làm đc)
   
-
 deadline: 15/4/2025
+## BÀI LÀM.
+1. Tạo CSDL cho hệ thống thời khoá biểu.
+   
