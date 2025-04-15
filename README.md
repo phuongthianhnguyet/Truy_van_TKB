@@ -40,7 +40,8 @@ Ta có các bảng sau:
 
 3. Bảng monhoc(#mamonhoc, tenmonhoc).
 
-![image](https://github.com/user-attachments/assets/752e851a-0527-4a3f-8d91-ffc8ed79f376)
+![image](https://github.com/user-attachments/assets/5d403c95-b0e8-4cda-8066-a119331e85ff)
+
 
 4. Bảng phong(#maphong, tenphong).
 
@@ -48,7 +49,7 @@ Ta có các bảng sau:
 
 5. Bảng TKB(#id_TKB, @magiaovien, @mamonhoc, @maphong, @malophp, giobatdau, gioketthuc).
 
-![image](https://github.com/user-attachments/assets/a472791f-6625-470c-ac8f-5547d502cae3)
+![image](https://github.com/user-attachments/assets/bc2ecec4-6ce4-4909-9fa8-24eae8c2b27e)
 
 
 - giobatdau:
@@ -103,38 +104,54 @@ Copy các dữ liệu cần đưa vào bảng là hoàn tất.
 ![image](https://github.com/user-attachments/assets/4ebba67c-0564-457c-99cd-3167bc6bdab2)
 
 
-
 Tương tự ta sẽ thực hiện với các bảng tiếp theo.
+
 2. Điền dữ liệu cho bảng lớp học phần.
 
-![image](https://github.com/user-attachments/assets/7cf6d998-3d04-4900-8c5b-29b678feed5e)
+![image](https://github.com/user-attachments/assets/1e72cb71-115b-4219-ad17-db168965c0ed)
 
-![image](https://github.com/user-attachments/assets/18758e55-1524-42cf-9b0b-9a80aa5d93d1)
 
 3. Điền dữ liệu cho bảng môn học.
 
-![image](https://github.com/user-attachments/assets/d2ae16d4-3daa-45cb-b2bb-3d0845cf1c4b)
-
-![image](https://github.com/user-attachments/assets/6776e6d6-603f-4f97-927b-71d6755e7d50)
+![image](https://github.com/user-attachments/assets/f8ddd18d-082a-4567-997c-b91a461d18bb)
 
 4. Điền dữ liệu cho bảng phòng.
 
 
-![image](https://github.com/user-attachments/assets/1d24074c-3552-4430-ad69-61f5e44695d6)
+![image](https://github.com/user-attachments/assets/a3bfd4c0-1f1a-4ac0-8e2f-f42bdb1c4da5)
 
-![image](https://github.com/user-attachments/assets/efbe63df-342d-454f-bb78-950d1b70cb03)
 
 
 5. Điền dữ liệu cho bảng TKB.
 
-![image](https://github.com/user-attachments/assets/cc92b854-0059-41de-8f6f-3de7a8746b32)
-
-![image](https://github.com/user-attachments/assets/8731fdea-8cb4-4ff0-a9cf-b7012cef2ad2)
+![image](https://github.com/user-attachments/assets/e01c9297-cbda-41c2-a771-31eecbf232b6)
 
 
-# Tạo được query truy vấn ra thông tin gồm 4 cột: họ tên gv, môn dạy, giờ vào lớp, giờ ra.
+# Tạo query truy vấn ra thông tin gồm 4 cột: họ tên gv, môn dạy, giờ vào lớp, giờ ra.
+
+```sql
+DECLARE @datetime1 DATETIME = '2025-03-24 07:30:00';
+DECLARE @datetime2 DATETIME = '2025-03-24 11:00:00';
+
+SELECT 
+    GV.hoten AS [Họ Tên Giáo Viên],
+    MH.tenmonhoc AS [Môn Dạy],
+    TKB.giobatdau AS [Giờ Vào],
+    TKB.gioketthuc AS [Giờ Ra]
+FROM 
+    TKB
+JOIN 
+    giaovien GV ON TKB.magiaovien = GV.magiaovien
+JOIN 
+    monhoc MH ON TKB.mamonhoc = MH.mamonhoc
+WHERE 
+    TKB.ngay = CAST(@datetime1 AS DATE)
+    AND TKB.giobatdau < CAST(@datetime2 AS TIME)
+    AND TKB.gioketthuc > CAST(@datetime1 AS TIME);
+```
 
 Trả lời câu hỏi: trong khoảng thời gian từ datetime1 tới datetime2 thì có những gv nào đang bận giảng dạy.
+![image](https://github.com/user-attachments/assets/fc8ab6aa-2866-4d0a-a60c-c5a95dbc455b)
 
 
 
