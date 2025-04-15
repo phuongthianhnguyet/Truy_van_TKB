@@ -48,7 +48,8 @@ Ta có các bảng sau:
 
 5. Bảng TKB(#id_TKB, @magiaovien, @mamonhoc, @maphong, @malophp, giobatdau, gioketthuc).
 
-![image](https://github.com/user-attachments/assets/9ce010a6-a496-424b-bf8f-84a775a29af1)
+![image](https://github.com/user-attachments/assets/a472791f-6625-470c-ac8f-5547d502cae3)
+
 
 - giobatdau:
 
@@ -58,9 +59,23 @@ Ta có các bảng sau:
 
 ![image](https://github.com/user-attachments/assets/1d42deec-47d8-4bc7-baf8-418dd94e3678)
 
+- ngay:
+  
+![image](https://github.com/user-attachments/assets/dd340bea-a633-446c-ac35-9c082bc2a9c8)
+
+- thu:
+
+![image](https://github.com/user-attachments/assets/d1b1ad8f-19a0-42a4-9a07-de563dc8f74b)
+
+- sotiet:
+
+![image](https://github.com/user-attachments/assets/eb4100ab-a7fa-420a-af1c-48229c62971c)
+
+
 # Diagram.
 
-![image](https://github.com/user-attachments/assets/ffe1413f-fc0c-4dac-b564-d8805b2db26b)
+![image](https://github.com/user-attachments/assets/a2b3be39-3b55-48a7-90b3-8becec1d0e7d)
+
 
 # Thêm thông tin cho các bảng từ EXCEL.
 
